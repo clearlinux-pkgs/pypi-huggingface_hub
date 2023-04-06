@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-huggingface_hub
-Version  : 0.13.3
-Release  : 3
-URL      : https://files.pythonhosted.org/packages/7c/c6/bc3e71647d0fcc757eb04fe2e5ea70fe6394cf3b21159f268f5a10cb805b/huggingface_hub-0.13.3.tar.gz
-Source0  : https://files.pythonhosted.org/packages/7c/c6/bc3e71647d0fcc757eb04fe2e5ea70fe6394cf3b21159f268f5a10cb805b/huggingface_hub-0.13.3.tar.gz
+Version  : 0.13.4
+Release  : 4
+URL      : https://files.pythonhosted.org/packages/ef/99/b47e4639754dcc98a4b4b7df370341d8b86b0799d361efe30334907e3be2/huggingface_hub-0.13.4.tar.gz
+Source0  : https://files.pythonhosted.org/packages/ef/99/b47e4639754dcc98a4b4b7df370341d8b86b0799d361efe30334907e3be2/huggingface_hub-0.13.4.tar.gz
 Summary  : Client library to download and publish models, datasets and other repos on the huggingface.co hub
 Group    : Development/Tools
 License  : Apache-2.0
@@ -16,12 +16,6 @@ Requires: pypi-huggingface_hub-license = %{version}-%{release}
 Requires: pypi-huggingface_hub-python = %{version}-%{release}
 Requires: pypi-huggingface_hub-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
-BuildRequires : pypi(filelock)
-BuildRequires : pypi(packaging)
-BuildRequires : pypi(pyyaml)
-BuildRequires : pypi(requests)
-BuildRequires : pypi(tqdm)
-BuildRequires : pypi(typing_extensions)
 # Suppress stripping binaries
 %define __strip /bin/true
 %define debug_package %{nil}
@@ -77,10 +71,10 @@ python3 components for the pypi-huggingface_hub package.
 
 
 %prep
-%setup -q -n huggingface_hub-0.13.3
-cd %{_builddir}/huggingface_hub-0.13.3
+%setup -q -n huggingface_hub-0.13.4
+cd %{_builddir}/huggingface_hub-0.13.4
 pushd ..
-cp -a huggingface_hub-0.13.3 buildavx2
+cp -a huggingface_hub-0.13.4 buildavx2
 popd
 
 %build
@@ -88,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1679326383
+export SOURCE_DATE_EPOCH=1680823786
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
