@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-huggingface_hub
-Version  : 0.14.1
-Release  : 6
-URL      : https://files.pythonhosted.org/packages/23/27/5c9adfa51fc841cd1e2c4949b49bd8f05ba4e8254ef5bb60ba82b8bcdafc/huggingface_hub-0.14.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/23/27/5c9adfa51fc841cd1e2c4949b49bd8f05ba4e8254ef5bb60ba82b8bcdafc/huggingface_hub-0.14.1.tar.gz
+Version  : 0.15.1
+Release  : 7
+URL      : https://files.pythonhosted.org/packages/6a/18/42d8bb8a7a87e28f024d4c6ec380ad135836873679e60a641813d22407f7/huggingface_hub-0.15.1.tar.gz
+Source0  : https://files.pythonhosted.org/packages/6a/18/42d8bb8a7a87e28f024d4c6ec380ad135836873679e60a641813d22407f7/huggingface_hub-0.15.1.tar.gz
 Summary  : Client library to download and publish models, datasets and other repos on the huggingface.co hub
 Group    : Development/Tools
 License  : Apache-2.0
@@ -72,10 +72,10 @@ python3 components for the pypi-huggingface_hub package.
 
 
 %prep
-%setup -q -n huggingface_hub-0.14.1
-cd %{_builddir}/huggingface_hub-0.14.1
+%setup -q -n huggingface_hub-0.15.1
+cd %{_builddir}/huggingface_hub-0.15.1
 pushd ..
-cp -a huggingface_hub-0.14.1 buildavx2
+cp -a huggingface_hub-0.15.1 buildavx2
 popd
 
 %build
@@ -83,15 +83,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682452192
+export SOURCE_DATE_EPOCH=1685719036
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
