@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-huggingface_hub
-Version  : 0.15.1
-Release  : 7
-URL      : https://files.pythonhosted.org/packages/6a/18/42d8bb8a7a87e28f024d4c6ec380ad135836873679e60a641813d22407f7/huggingface_hub-0.15.1.tar.gz
-Source0  : https://files.pythonhosted.org/packages/6a/18/42d8bb8a7a87e28f024d4c6ec380ad135836873679e60a641813d22407f7/huggingface_hub-0.15.1.tar.gz
+Version  : 0.16.2
+Release  : 8
+URL      : https://files.pythonhosted.org/packages/bf/90/faeff1cffae35f154b80c7779c4f95fd49aa542bd5f3280dee2731c2abe0/huggingface_hub-0.16.2.tar.gz
+Source0  : https://files.pythonhosted.org/packages/bf/90/faeff1cffae35f154b80c7779c4f95fd49aa542bd5f3280dee2731c2abe0/huggingface_hub-0.16.2.tar.gz
 Summary  : Client library to download and publish models, datasets and other repos on the huggingface.co hub
 Group    : Development/Tools
 License  : Apache-2.0
@@ -21,12 +21,11 @@ BuildRequires : buildreq-distutils3
 %define debug_package %{nil}
 
 %description
-# `huggingface_hub`
-<a href="https://github.com/psf/black"><img alt="Code style: black" src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
-<a href="https://codecov.io/gh/huggingface/huggingface_hub"><img alt="Code coverage" src="https://codecov.io/gh/huggingface/huggingface_hub/branch/main/graph/badge.svg?token=RXP95LE2XL"></a>
-<a href="https://github.com/huggingface/huggingface_hub/releases"><img alt="GitHub release" src="https://img.shields.io/github/release/huggingface/huggingface_hub.svg"></a>
-<a href="https://github.com/huggingface/huggingface_hub"><img alt="Documentation" src="https://img.shields.io/pypi/pyversions/huggingface_hub.svg"></a>
-<a href="https://huggingface.co/docs/huggingface_hub/index"><img alt="Documentation" src="https://img.shields.io/website/http/huggingface.co/docs/huggingface_hub/index.svg?down_color=red&down_message=offline&up_message=online&label=doc"></a>
+<p align="center">
+<br/>
+<img alt="huggingface_hub library logo" src="https://huggingface.co/datasets/huggingface/documentation-images/raw/main/huggingface_hub.svg" width="376" height="59" style="max-width: 100%;">
+<br/>
+</p>
 
 %package bin
 Summary: bin components for the pypi-huggingface_hub package.
@@ -72,10 +71,10 @@ python3 components for the pypi-huggingface_hub package.
 
 
 %prep
-%setup -q -n huggingface_hub-0.15.1
-cd %{_builddir}/huggingface_hub-0.15.1
+%setup -q -n huggingface_hub-0.16.2
+cd %{_builddir}/huggingface_hub-0.16.2
 pushd ..
-cp -a huggingface_hub-0.15.1 buildavx2
+cp -a huggingface_hub-0.16.2 buildavx2
 popd
 
 %build
@@ -83,7 +82,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1685719036
+export SOURCE_DATE_EPOCH=1688571564
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
