@@ -1,5 +1,5 @@
 PKG_NAME := pypi-huggingface_hub
-URL = https://files.pythonhosted.org/packages/8a/2e/a185e349cf1f67e2624d6c8aff898486935813d07b041464f8b8d8fe3e22/huggingface_hub-0.22.1.tar.gz
+URL = https://files.pythonhosted.org/packages/42/4c/1ee8ca0aebca6ac985b65c65a443015dec969c2ed40e3599f3a801312d48/huggingface_hub-0.22.2.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
