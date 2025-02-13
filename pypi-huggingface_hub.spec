@@ -7,7 +7,7 @@
 #
 Name     : pypi-huggingface_hub
 Version  : 0.28.1
-Release  : 55
+Release  : 56
 URL      : https://files.pythonhosted.org/packages/e7/ce/a734204aaae6c35a22f9956ebcd8d8708ae5b842e15d6f42bd6f49e634a4/huggingface_hub-0.28.1.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e7/ce/a734204aaae6c35a22f9956ebcd8d8708ae5b842e15d6f42bd6f49e634a4/huggingface_hub-0.28.1.tar.gz
 Summary  : Client library to download and publish models, datasets and other repos on the huggingface.co hub
