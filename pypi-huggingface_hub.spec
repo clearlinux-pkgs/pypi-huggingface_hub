@@ -6,10 +6,10 @@
 # autospec commit: 99a7985
 #
 Name     : pypi-huggingface_hub
-Version  : 0.31.4
-Release  : 66
-URL      : https://files.pythonhosted.org/packages/05/a0/7445e07427a917399db619e3c7383de3cd723c20d3b3a8a527a096c49a44/huggingface_hub-0.31.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/05/a0/7445e07427a917399db619e3c7383de3cd723c20d3b3a8a527a096c49a44/huggingface_hub-0.31.4.tar.gz
+Version  : 0.32.0
+Release  : 67
+URL      : https://files.pythonhosted.org/packages/f4/ca/8ee27c56ab650d9d3ea095f0ba12ceb202bc8ba7362429dc76c25438df2f/huggingface_hub-0.32.0.tar.gz
+Source0  : https://files.pythonhosted.org/packages/f4/ca/8ee27c56ab650d9d3ea095f0ba12ceb202bc8ba7362429dc76c25438df2f/huggingface_hub-0.32.0.tar.gz
 Summary  : Client library to download and publish models, datasets and other repos on the huggingface.co hub
 Group    : Development/Tools
 License  : Apache-2.0
@@ -66,6 +66,7 @@ Requires: python3-core
 Provides: pypi(huggingface_hub)
 Requires: pypi(filelock)
 Requires: pypi(fsspec)
+Requires: pypi(hf_xet)
 Requires: pypi(packaging)
 Requires: pypi(pyyaml)
 Requires: pypi(requests)
@@ -77,10 +78,10 @@ python3 components for the pypi-huggingface_hub package.
 
 
 %prep
-%setup -q -n huggingface_hub-0.31.4
-cd %{_builddir}/huggingface_hub-0.31.4
+%setup -q -n huggingface_hub-0.32.0
+cd %{_builddir}/huggingface_hub-0.32.0
 pushd ..
-cp -a huggingface_hub-0.31.4 buildavx2
+cp -a huggingface_hub-0.32.0 buildavx2
 popd
 
 %build
@@ -88,7 +89,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1747666906
+export SOURCE_DATE_EPOCH=1748009856
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -155,6 +156,7 @@ popd
 %files bin
 %defattr(-,root,root,-)
 /usr/bin/huggingface-cli
+/usr/bin/tiny-agents
 
 %files license
 %defattr(0644,root,root,0755)
