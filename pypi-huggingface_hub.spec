@@ -6,10 +6,10 @@
 # autospec commit: 65cf152
 #
 Name     : pypi-huggingface_hub
-Version  : 0.32.4
-Release  : 70
-URL      : https://files.pythonhosted.org/packages/60/c8/4f7d270285c46324fd66f62159eb16739aa5696f422dba57678a8c6b78e9/huggingface_hub-0.32.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/60/c8/4f7d270285c46324fd66f62159eb16739aa5696f422dba57678a8c6b78e9/huggingface_hub-0.32.4.tar.gz
+Version  : 0.32.6
+Release  : 71
+URL      : https://files.pythonhosted.org/packages/8f/fb/7fcbafabdf470ffb5457b756cc1f659b4e88a9ff37c108e6c7a5ab5e781e/huggingface_hub-0.32.6.tar.gz
+Source0  : https://files.pythonhosted.org/packages/8f/fb/7fcbafabdf470ffb5457b756cc1f659b4e88a9ff37c108e6c7a5ab5e781e/huggingface_hub-0.32.6.tar.gz
 Summary  : Client library to download and publish models, datasets and other repos on the huggingface.co hub
 Group    : Development/Tools
 License  : Apache-2.0
@@ -78,10 +78,10 @@ python3 components for the pypi-huggingface_hub package.
 
 
 %prep
-%setup -q -n huggingface_hub-0.32.4
-cd %{_builddir}/huggingface_hub-0.32.4
+%setup -q -n huggingface_hub-0.32.6
+cd %{_builddir}/huggingface_hub-0.32.6
 pushd ..
-cp -a huggingface_hub-0.32.4 buildavx2
+cp -a huggingface_hub-0.32.6 buildavx2
 popd
 
 %build
@@ -89,7 +89,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1748959081
+export SOURCE_DATE_EPOCH=1749652964
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
